@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/resources/widgets/inputs/custom_text_field.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 // Pages
@@ -72,22 +73,22 @@ class _SignupPageState extends NyState<SignupPage> {
                 child: Column(
                   children: [
                     Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Frl".tr(),
-                        style: defaultTextTheme.displayLarge,
-                      ),
+                      alignment: Alignment.center,
+                      child: Text("Register".tr(),
+                          style: defaultTextTheme.displayLarge!.copyWith(
+                            color: Colors.white,
+                          )),
                     ),
                     Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: Alignment.center,
                       child: Text(
-                        "To access your tennis iD you will need an account. Please create one below.",
+                        "Yo, Get For Real already",
                         style: TextStyle(
                           fontSize: 18,
                         ),
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 100),
                     // SupaSocialsAuth(
                     //   socialProviders: [
                     //     SocialProviders.apple,
@@ -120,21 +121,9 @@ class _SignupPageState extends NyState<SignupPage> {
                       text: "or sign-up with your email address",
                     ),
                     SizedBox(height: 35),
-                    CupertinoTextField(
+                    CustomTextField(
                       controller: _emailController,
-                      style: TextStyle(color: Color(0xFF231F20), fontSize: 16),
                       placeholder: "Your email address",
-                      placeholderStyle:
-                          TextStyle(fontSize: 14, color: Color(0xFF959A9A)),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.3),
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: Color(0xFF959A9A),
-                        ),
-                      ),
                     ),
                     SizedBox(height: 14),
                     PasswordField(controller: _passwordController),
@@ -145,7 +134,7 @@ class _SignupPageState extends NyState<SignupPage> {
                         onPressed: () {
                           _signUp();
                         },
-                        text: 'Register now',
+                        text: 'Create account',
                       ),
                     ),
                     SizedBox(height: 20),

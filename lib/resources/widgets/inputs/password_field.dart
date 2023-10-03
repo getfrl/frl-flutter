@@ -21,13 +21,13 @@ class _PasswordFieldState extends State<PasswordField> {
         CupertinoTextField(
           controller: widget.controller,
           obscureText: _obscureText,
-          style: TextStyle(color: Color(0xFF231F20), fontSize: 16),
+          style: TextStyle(color: Colors.white, fontSize: 16),
           placeholder: "Choose a password",
           placeholderStyle: TextStyle(fontSize: 14, color: Color(0xFF959A9A)),
           padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.3),
-            borderRadius: BorderRadius.circular(10),
+            color: Color(0xFF242424),
+            borderRadius: BorderRadius.circular(30),
             border: Border.all(
               color: Color(0xFF959A9A),
             ),

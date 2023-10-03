@@ -17,12 +17,12 @@ import 'package:nylo_framework/nylo_framework.dart';
 
 appRouter() => nyRoutes((router) {
       // Auth routes
-      router.route(SignupPage.path, (context) => SignupPage());
+      router.route(SignupPage.path, (context) => SignupPage(),
+          initialRoute: true);
       router.route(LoginPage.path, (context) => LoginPage());
 
       // Main routes
-      router.route(TrendingPage.path, (context) => TrendingPage(),
-          initialRoute: true);
+      router.route(TrendingPage.path, (context) => TrendingPage());
 
       // Profile & Settings routes
       router.route(ProfilePage.path, (context) => ProfilePage(),
