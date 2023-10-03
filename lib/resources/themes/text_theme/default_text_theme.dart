@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /*
 |--------------------------------------------------------------------------
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 |--------------------------------------------------------------------------
 */
 
-const TextTheme defaultTextTheme = TextTheme(
+final TextTheme defaultTextTheme = TextTheme(
   titleLarge: TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.w600,
@@ -18,17 +19,17 @@ const TextTheme defaultTextTheme = TextTheme(
     fontSize: 24.0,
     fontWeight: FontWeight.w600,
   ),
-  displaySmall: TextStyle(
+  displaySmall: GoogleFonts.bricolageGrotesque(
     fontSize: 26.0,
     fontWeight: FontWeight.w700,
   ),
-  displayMedium: TextStyle(
+  displayMedium: GoogleFonts.bricolageGrotesque(
     fontSize: 28.0,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w700,
   ),
-  displayLarge: TextStyle(
+  displayLarge: GoogleFonts.bricolageGrotesque(
     fontSize: 36.0,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w700,
   ),
   titleSmall: TextStyle(
     fontSize: 14.0,

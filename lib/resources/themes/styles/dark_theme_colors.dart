@@ -9,16 +9,16 @@ import '/resources/themes/styles/color_styles.dart';
 
 class DarkThemeColors implements ColorStyles {
   // general
-  Color get background => const Color(0xFF232c33);
+  Color get background => const Color(0xFF121212);
 
   Color get primaryContent => const Color(0xFFE1E1E1);
-  Color get primaryAccent => const Color(0xFF9999aa);
+  Color get primaryAccent => const Color(0xFFF2FF5E);
 
   Color get surfaceBackground => Colors.white70;
   Color get surfaceContent => Colors.black;
 
   // app bar
-  Color get appBarBackground => const Color(0xFF4b5e6d);
+  Color get appBarBackground => const Color(0xFF121212);
   Color get appBarPrimaryContent => Colors.white;
 
   // buttons

@@ -4,7 +4,7 @@ import 'package:nylo_framework/nylo_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'controller.dart';
 
-class HomeController extends Controller {
+class TrendingController extends Controller {
   @override
   construct(BuildContext context) {
     super.construct(context);
@@ -29,10 +29,10 @@ class HomeController extends Controller {
 
   showAbout() {
     showAboutDialog(
-        context: context!,
-        applicationName: getEnv('APP_NAME'),
-        applicationIcon: Logo(),
-        applicationVersion: nyloVersion,
+      context: context!,
+      applicationName: getEnv('APP_NAME'),
+      applicationIcon: Logo(),
+      applicationVersion: nyloVersion,
     );
   }
 }

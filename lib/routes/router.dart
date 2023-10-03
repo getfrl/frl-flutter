@@ -1,4 +1,7 @@
-import '/resources/pages/home_page.dart';
+import '../resources/pages/auth/signup_page.dart';
+import '../resources/pages/auth/login_page.dart';
+import '/resources/pages/profile_page.dart';
+import '../resources/pages/trending_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 /*
@@ -13,9 +16,15 @@ import 'package:nylo_framework/nylo_framework.dart';
 */
 
 appRouter() => nyRoutes((router) {
-  router.route(HomePage.path, (context) => HomePage(), initialRoute: true);
-  // Add your routes here
+      // Auth routes
+      router.route(SignupPage.path, (context) => SignupPage());
+      router.route(LoginPage.path, (context) => LoginPage());
 
-  // router.route(NewPage.path, (context) => NewPage(), transition: PageTransitionType.fade);
+      // Main routes
+      router.route(TrendingPage.path, (context) => TrendingPage(),
+          initialRoute: true);
 
-});
+      // Profile & Settings routes
+      router.route(ProfilePage.path, (context) => ProfilePage(),
+          transition: PageTransitionType.fade);
+    });
