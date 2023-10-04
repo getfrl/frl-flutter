@@ -38,6 +38,7 @@ dev_dependencies:
 #  lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  faker: ^2.1.0
 
 # APP ICON - public/assets/app_icon/icon.png
 # Build icons: "flutter pub run flutter_launcher_icons:main"

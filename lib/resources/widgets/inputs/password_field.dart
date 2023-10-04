@@ -24,7 +24,7 @@ class _PasswordFieldState extends State<PasswordField> {
           style: TextStyle(color: Colors.white, fontSize: 16),
           placeholder: "Choose a password",
           placeholderStyle: TextStyle(fontSize: 14, color: Color(0xFF959A9A)),
-          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           decoration: BoxDecoration(
             color: Color(0xFF242424),
             borderRadius: BorderRadius.circular(30),

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/extensions.dart';
-import 'package:flutter_app/resources/widgets/logo_widget.dart';
+import 'package:flutter_app/resources/widgets/custom_bottom_nav_widget.dart';
+import 'package:flutter_app/resources/widgets/product_card.dart';
 import '../../app/controllers/trending_controller.dart';
 import '/bootstrap/helpers.dart';
-import '/resources/widgets/safearea_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
-import 'package:nylo_framework/theme/helper/ny_theme.dart';
 
 class TrendingPage extends NyStatefulWidget {
   @override
@@ -28,7 +26,7 @@ class _TrendingPageState extends NyState<TrendingPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3, // The number of tabs
+      length: 2, // The number of tabs
       child: Scaffold(
         extendBody: true,
         appBar: AppBar(
@@ -39,75 +37,92 @@ class _TrendingPageState extends NyState<TrendingPage> {
           backgroundColor: ThemeColor.get(context).background,
         ),
         backgroundColor: Color(0xFFF2F2F2),
-        body: Column(
+        body: Stack(
           children: [
-            Container(
-              color: ThemeColor.get(context).background,
-              child: TabBar(
-                // This is where you add your tab bar
-                tabs: [
-                  Tab(icon: Icon(Icons.directions_car)),
-                  Tab(icon: Icon(Icons.directions_transit)),
-                  Tab(icon: Icon(Icons.directions_bike)),
-                ],
-              ),
+            Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.zero,
+                  color: ThemeColor.get(context).background,
+                  child: TabBar(
+                    padding: EdgeInsets.zero,
+                    tabs: [Tab(text: "Products"), Tab(text: "Lists")],
+                  ),
+                ),
+                Expanded(
+                  child: TabBarView(
+                    // This is where you add your tab bar view
+                    children: [
+                      SingleChildScrollView(
+                        padding: EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Today",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Icon(Icons.tune, color: Colors.black)
+                              ],
+                            ),
+                            SizedBox(height: 20),
+                            ListView.separated(
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: 12,
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 12),
+                              itemBuilder: (context, index) {
+                                return ProductCard(
+                                  imageUrl:
+                                      'public/assets/images/product-photo.png',
+                                  title:
+                                      "Nivea Sun Carotene Bronze Sunscreen Lotion SPF 6",
+                                  price: "€12.99",
+                                  oldPrice: "€16.99",
+                                  votes: "1,429 Votes in the last 2 hour",
+                                  uploadCount: "18.7k",
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(Icons.directions_transit)
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Expanded(
-              child: TabBarView(
-                // This is where you add your tab bar view
-                children: [
-                  Icon(Icons.directions_car),
-                  Icon(Icons.directions_transit),
-                  Icon(Icons.directions_bike),
-                ],
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Container(
+                height: 120, // Adjust this value as needed
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      ThemeColor.get(context)
+                          .secondaryBackground
+                          .withOpacity(0.0),
+                      ThemeColor.get(context).secondaryBackground,
+                    ],
+                  ),
+                ),
               ),
             ),
           ],
         ),
-        bottomNavigationBar: BottomAppBar(
-          elevation: 0,
-          color: Colors.transparent,
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 72),
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 7, horizontal: 7),
-            decoration: BoxDecoration(
-              color: ThemeColor.get(context).background,
-              borderRadius: BorderRadius.all(
-                Radius.circular(30),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: ThemeColor.get(context).primaryAccent,
-                  ),
-                  child: IconButton(
-                    icon: Icon(Icons.local_fire_department,
-                        size: 30.0,
-                        color: Colors
-                            .black), // Increased icon size and changed color to black
-                    onPressed: () {},
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.search, size: 28.0),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(Icons.notifications_active_outlined, size: 28.0),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(Icons.person_outline_rounded, size: 28.0),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          ),
-        ),
+        bottomNavigationBar: CustomBottomNav(currentIndex: 0),
       ),
     );
   }

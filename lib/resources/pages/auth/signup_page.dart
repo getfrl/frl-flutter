@@ -142,9 +142,11 @@ class _SignupPageState extends NyState<SignupPage> {
               ),
               TextButton(
                 onPressed: () {
-                  routeTo(LoginPage.path,
-                      navigationType: NavigationType.pushReplace,
-                      pageTransition: PageTransitionType.fade);
+                  routeTo(
+                    LoginPage.path,
+                    navigationType: NavigationType.pushReplace,
+                    pageTransition: PageTransitionType.fade,
+                  );
                 },
                 child: Text.rich(
                   TextSpan(

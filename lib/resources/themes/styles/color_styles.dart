@@ -10,6 +10,7 @@ abstract class ColorStyles extends BaseColorStyles {
 
   // general
   Color get background;
+  Color get secondaryBackground;
   Color get primaryContent;
   Color get primaryAccent;
 

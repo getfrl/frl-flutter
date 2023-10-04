@@ -10,6 +10,7 @@ import '/resources/themes/styles/color_styles.dart';
 class LightThemeColors implements ColorStyles {
   // general
   Color get background => const Color(0xFFFFFFFF);
+  Color get secondaryBackground => const Color(0xFFFFFFFF);
 
   Color get primaryContent => const Color(0xFF000000);
   Color get primaryAccent => const Color(0xFF0045a0);

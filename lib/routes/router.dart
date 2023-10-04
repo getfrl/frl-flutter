@@ -22,7 +22,8 @@ appRouter() => nyRoutes((router) {
       router.route(LoginPage.path, (context) => LoginPage());
 
       // Main routes
-      router.route(TrendingPage.path, (context) => TrendingPage());
+      router.route(TrendingPage.path, (context) => TrendingPage(),
+          authPage: true);
 
       // Profile & Settings routes
       router.route(ProfilePage.path, (context) => ProfilePage(),
