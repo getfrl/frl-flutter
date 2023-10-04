@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
 class SocialLoginButton extends StatelessWidget {
-  final IconData icon;
+  final IconData? icon;
+  final ImageProvider? image;
   final String text;
   final Color backgroundColor;
+  final Color color;
   final VoidCallback onPressed;
 
   SocialLoginButton({
-    required this.icon,
+    this.icon,
+    this.image,
     required this.text,
     required this.backgroundColor,
+    this.color = Colors.white,
     required this.onPressed,
   });
 
@@ -20,13 +24,21 @@ class SocialLoginButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Icon(icon, color: Colors.white),
+          if (image != null)
+            Image(
+              image: image!,
+              width: 20,
+              height: 20,
+            )
+          else if (icon != null)
+            Icon(icon, color: Colors.white),
           SizedBox(width: 10),
           Text(
             text,
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
+              color: color,
             ),
           ),
         ],

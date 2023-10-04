@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/resources/widgets/inputs/custom_text_field.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
@@ -89,38 +88,6 @@ class _SignupPageState extends NyState<SignupPage> {
                       ),
                     ),
                     SizedBox(height: 100),
-                    // SupaSocialsAuth(
-                    //   socialProviders: [
-                    //     SocialProviders.apple,
-                    //     SocialProviders.facebook,
-                    //   ],
-                    //   colored: true,
-                    //   redirectUrl: 'io.mydomain.myapp://callback',
-                    //   onSuccess: (Session response) {},
-                    //   onError: (error) {},
-                    // ),
-                    SocialLoginButton(
-                      icon: Icons.facebook,
-                      text: "Continue with Facebook",
-                      backgroundColor: Color(0xFF435A9E),
-                      onPressed: () {
-                        // Handle Facebook login
-                      },
-                    ),
-                    SizedBox(height: 14),
-                    SocialLoginButton(
-                      icon: Icons.apple,
-                      text: "Continue with Apple",
-                      backgroundColor: Colors.black,
-                      onPressed: () {
-                        // Handle Apple login
-                      },
-                    ),
-                    SizedBox(height: 35),
-                    DividerWidget(
-                      text: "or sign-up with your email address",
-                    ),
-                    SizedBox(height: 35),
                     CustomTextField(
                       controller: _emailController,
                       placeholder: "Your email address",
@@ -137,7 +104,39 @@ class _SignupPageState extends NyState<SignupPage> {
                         text: 'Create account',
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 40),
+                    DividerWidget(
+                      text: "or",
+                    ),
+                    SizedBox(height: 40),
+                    SocialLoginButton(
+                      icon: Icons.facebook,
+                      text: "Continue with Facebook",
+                      backgroundColor: Color(0xFF435A9E),
+                      onPressed: () {
+                        // Handle Facebook login
+                      },
+                    ),
+                    SizedBox(height: 14),
+                    SocialLoginButton(
+                      image: AssetImage('public/assets/images/google_logo.png'),
+                      text: "Continue with Google",
+                      backgroundColor: Colors.white,
+                      color: Colors.black,
+                      onPressed: () {
+                        // Handle Apple login
+                      },
+                    ),
+                    SizedBox(height: 14),
+                    SocialLoginButton(
+                      icon: Icons.apple,
+                      text: "Continue with Apple",
+                      backgroundColor: Colors.black,
+                      onPressed: () {
+                        // Handle Apple login
+                      },
+                    ),
+                    SizedBox(height: 35),
                   ],
                 ),
               ),
