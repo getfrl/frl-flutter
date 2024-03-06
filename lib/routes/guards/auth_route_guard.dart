@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/resources/pages/trending_page.dart';
+import 'package:frl_flutter/resources/pages/trending_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 /*

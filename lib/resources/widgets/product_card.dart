@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
+import 'package:frl_flutter/bootstrap/helpers.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class ProductCard extends StatefulWidget {

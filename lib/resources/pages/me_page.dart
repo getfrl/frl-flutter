@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/widgets/custom_bottom_nav_widget.dart';
+import 'package:frl_flutter/app/controllers/me_controller.dart';
+import 'package:frl_flutter/app/models/user.dart';
+import 'package:frl_flutter/bootstrap/helpers.dart';
+import 'package:frl_flutter/resources/widgets/custom_bottom_nav_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
-import '/app/controllers/controller.dart';
 
-class ProfilePage extends NyStatefulWidget {
-  final Controller controller = Controller();
-
+class MePage extends NyStatefulWidget {
   static const path = '/profile';
 
-  ProfilePage({Key? key}) : super(key: key);
+  MePage({Key? key}) : super(key: key);
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _MePageState createState() => _MePageState();
 }
 
-class _ProfilePageState extends NyState<ProfilePage> {
+class _MePageState extends NyState<MePage> {
+  MeController? meController;
+  User? me;
+
   @override
   init() async {
     super.init();
+    meController = MeController(context);
+    me = await meController?.fetchMe();
+    setState(() {});
   }
+
+  // @override
+  // initState() {
+  //   super.initState();
+  // }
 
   @override
   void dispose() {
@@ -80,13 +90,24 @@ class _ProfilePageState extends NyState<ProfilePage> {
                               ),
                               padding: EdgeInsets.symmetric(
                                   vertical: 10, horizontal: 16),
-                              child: Text(
-                                "#12,345",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                  color: ThemeColor.get(context).primaryAccent,
-                                ),
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                    'public/assets/images/frl-small-icon.png',
+                                    height: 18,
+                                    width: 18,
+                                  ),
+                                  SizedBox(width: 6),
+                                  Text(
+                                    "#" + (me?.frlId ?? "No id found"),
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                      color:
+                                          ThemeColor.get(context).primaryAccent,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(width: 18),
@@ -139,21 +160,21 @@ class _ProfilePageState extends NyState<ProfilePage> {
                       Column(
                         children: [
                           Text(
-                            "50",
+                            "3241",
                             style: TextStyle(
                               fontSize: 16,
                               color: ThemeColor.get(context)
                                   .primaryContent
-                                  .withOpacity(0.6),
+                                  .withOpacity(0.9),
                             ),
                           ),
                           Text(
-                            "Vote Streak",
+                            "Followers",
                             style: TextStyle(
                               fontSize: 10,
                               color: ThemeColor.get(context)
                                   .primaryContent
-                                  .withOpacity(0.3),
+                                  .withOpacity(0.5),
                             ),
                           ),
                         ],
@@ -171,7 +192,7 @@ class _ProfilePageState extends NyState<ProfilePage> {
                               fontSize: 16,
                               color: ThemeColor.get(context)
                                   .primaryContent
-                                  .withOpacity(0.6),
+                                  .withOpacity(0.9),
                             ),
                           ),
                           Text(
@@ -180,7 +201,7 @@ class _ProfilePageState extends NyState<ProfilePage> {
                               fontSize: 10,
                               color: ThemeColor.get(context)
                                   .primaryContent
-                                  .withOpacity(0.3),
+                                  .withOpacity(0.5),
                             ),
                           ),
                         ],
@@ -193,21 +214,21 @@ class _ProfilePageState extends NyState<ProfilePage> {
                       Column(
                         children: [
                           Text(
-                            "2.5k",
+                            "50",
                             style: TextStyle(
                               fontSize: 16,
                               color: ThemeColor.get(context)
                                   .primaryContent
-                                  .withOpacity(0.6),
+                                  .withOpacity(0.9),
                             ),
                           ),
                           Text(
-                            "Votes given",
+                            "Vote Streak",
                             style: TextStyle(
                               fontSize: 10,
                               color: ThemeColor.get(context)
                                   .primaryContent
-                                  .withOpacity(0.3),
+                                  .withOpacity(0.5),
                             ),
                           ),
                         ],
@@ -220,7 +241,7 @@ class _ProfilePageState extends NyState<ProfilePage> {
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNav(currentIndex: 3),
+      bottomNavigationBar: CustomBottomNav(currentIndex: 4),
     );
   }
 }

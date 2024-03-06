@@ -8,8 +8,8 @@ class AuthApiService extends BaseApiService {
   AuthApiService({BuildContext? buildContext}) : super(buildContext);
 
   @override
-  String get baseUrl => 'https://safely-discrete-racer.ngrok-free.app';
-  // String get baseUrl => getEnv('API_BASE_URL');
+  // String get baseUrl => 'https://safely-discrete-racer.ngrok-free.app';
+  String get baseUrl => getEnv('API_BASE_URL');
 
   Future<User?> signUp(String email, String password) async {
     return await network<User>(

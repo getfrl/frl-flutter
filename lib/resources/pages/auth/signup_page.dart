@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/resources/widgets/inputs/custom_text_field.dart';
+import 'package:frl_flutter/resources/widgets/inputs/custom_text_field.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 // Pages
-import 'package:flutter_app/resources/pages/auth/login_page.dart';
+import 'package:frl_flutter/resources/pages/auth/login_page.dart';
 
 // controllers
 import '/app/controllers/controller.dart';
 import '/app/controllers/auth_controller.dart';
 
 // Components / Reusable widgets
-import 'package:flutter_app/resources/themes/text_theme/default_text_theme.dart';
-import 'package:flutter_app/resources/widgets/inputs/password_field.dart';
-import 'package:flutter_app/resources/widgets/buttons/social_login_button.dart';
-import 'package:flutter_app/resources/widgets/buttons/action_button.dart';
-import 'package:flutter_app/resources/widgets/utils/divider_widget.dart';
+import 'package:frl_flutter/resources/themes/text_theme/default_text_theme.dart';
+import 'package:frl_flutter/resources/widgets/inputs/password_field.dart';
+import 'package:frl_flutter/resources/widgets/buttons/social_login_button.dart';
+import 'package:frl_flutter/resources/widgets/buttons/action_button.dart';
+import 'package:frl_flutter/resources/widgets/utils/divider_widget.dart';
 
 class SignupPage extends NyStatefulWidget {
   final Controller controller = Controller();

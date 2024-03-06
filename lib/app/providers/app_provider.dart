@@ -1,7 +1,7 @@
-import 'package:flutter_app/config/decoders.dart';
-import 'package:flutter_app/config/design.dart';
-import 'package:flutter_app/config/theme.dart';
-import 'package:flutter_app/config/validation_rules.dart';
+import 'package:frl_flutter/config/decoders.dart';
+import 'package:frl_flutter/config/design.dart';
+import 'package:frl_flutter/config/theme.dart';
+import 'package:frl_flutter/config/validation_rules.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import '/config/localization.dart';
 
@@ -9,11 +9,11 @@ class AppProvider implements NyProvider {
   @override
   boot(Nylo nylo) async {
     await NyLocalization.instance.init(
-        localeType: localeType,
-        languageCode: languageCode,
-        languagesList: languagesList,
-        assetsDirectory: assetsDirectory,
-        valuesAsMap: valuesAsMap,
+      localeType: localeType,
+      languageCode: languageCode,
+      languagesList: languagesList,
+      assetsDirectory: assetsDirectory,
+      valuesAsMap: valuesAsMap,
     );
 
     nylo.appLoader = loader;
@@ -27,7 +27,5 @@ class AppProvider implements NyProvider {
   }
 
   @override
-  afterBoot(Nylo nylo) async {
-
-  }
+  afterBoot(Nylo nylo) async {}
 }

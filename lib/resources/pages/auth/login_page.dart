@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/controllers/auth_controller.dart';
-import 'package:flutter_app/resources/pages/auth/signup_page.dart';
-import 'package:flutter_app/resources/themes/text_theme/default_text_theme.dart';
-import 'package:flutter_app/resources/widgets/buttons/action_button.dart';
-import 'package:flutter_app/resources/widgets/buttons/social_login_button.dart';
-import 'package:flutter_app/resources/widgets/inputs/custom_text_field.dart';
-import 'package:flutter_app/resources/widgets/inputs/password_field.dart';
-import 'package:flutter_app/resources/widgets/utils/divider_widget.dart';
+import 'package:frl_flutter/app/controllers/auth_controller.dart';
+import 'package:frl_flutter/resources/pages/auth/signup_page.dart';
+import 'package:frl_flutter/resources/themes/text_theme/default_text_theme.dart';
+import 'package:frl_flutter/resources/widgets/buttons/action_button.dart';
+import 'package:frl_flutter/resources/widgets/buttons/social_login_button.dart';
+import 'package:frl_flutter/resources/widgets/inputs/custom_text_field.dart';
+import 'package:frl_flutter/resources/widgets/inputs/password_field.dart';
+import 'package:frl_flutter/resources/widgets/utils/divider_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import '/app/controllers/controller.dart';
 

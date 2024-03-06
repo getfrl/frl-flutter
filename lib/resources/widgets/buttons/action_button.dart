@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
+import 'package:frl_flutter/bootstrap/helpers.dart';
 
 class ActionButton extends StatelessWidget {
   final VoidCallback onPressed;

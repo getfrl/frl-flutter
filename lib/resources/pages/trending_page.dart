@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/resources/widgets/custom_bottom_nav_widget.dart';
-import 'package:flutter_app/resources/widgets/product_card.dart';
+import 'package:frl_flutter/resources/widgets/custom_bottom_nav_widget.dart';
+import 'package:frl_flutter/resources/widgets/list_card.dart';
+import 'package:frl_flutter/resources/widgets/product_card.dart';
 import '../../app/controllers/trending_controller.dart';
 import '/bootstrap/helpers.dart';
 import 'package:nylo_framework/nylo_framework.dart';
@@ -94,7 +95,50 @@ class _TrendingPageState extends NyState<TrendingPage> {
                           ],
                         ),
                       ),
-                      Icon(Icons.directions_transit)
+                      SingleChildScrollView(
+                        padding: EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Today",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Icon(Icons.tune, color: Colors.black)
+                              ],
+                            ),
+                            SizedBox(height: 20),
+                            GridView.count(
+                              childAspectRatio: 0.90,
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 10,
+                              mainAxisSpacing: 10,
+                              // childAspectRatio: (itemWidth / itemHeight),
+                              controller:
+                                  new ScrollController(keepScrollOffset: false),
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              children: List.generate(8, (index) {
+                                return ListCard(
+                                  imageUrl:
+                                      'public/assets/images/product-photo.png',
+                                  title:
+                                      "Nivea Sun Carotene Bronze Sunscreen Lotion SPF 6",
+                                  saves: "12.7k",
+                                  noOfProducts: 50,
+                                  owner: "@fabian",
+                                );
+                              }),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),

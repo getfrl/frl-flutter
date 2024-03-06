@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/pages/profile_page.dart';
-import 'package:flutter_app/resources/pages/trending_page.dart';
+import 'package:frl_flutter/bootstrap/helpers.dart';
+import 'package:frl_flutter/resources/pages/me_page.dart';
+import 'package:frl_flutter/resources/pages/trending_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class CustomBottomNav extends StatefulWidget {
@@ -61,10 +61,13 @@ class _CustomBottomNavState extends NyState<CustomBottomNav> {
       case 2:
         // Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage()));
         break;
-      case 3:
+      case 2:
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage()));
+        break;
+      case 4:
         HapticFeedback.lightImpact();
         routeTo(
-          ProfilePage.path,
+          MePage.path,
           navigationType: NavigationType.pushReplace,
           pageTransition: PageTransitionType.fade,
         );
@@ -77,7 +80,7 @@ class _CustomBottomNavState extends NyState<CustomBottomNav> {
     return BottomAppBar(
       elevation: 0,
       color: Colors.transparent,
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 72),
+      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 52),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 7, horizontal: 7),
         decoration: BoxDecoration(
@@ -104,14 +107,20 @@ class _CustomBottomNavState extends NyState<CustomBottomNav> {
             CustomIconButton(
               selectedIndex: _selectedIndex,
               itemIndex: 2,
-              icon: Icons.notifications_active_outlined,
+              icon: Icons.add,
               onTap: () => _onItemTapped(2),
             ),
             CustomIconButton(
               selectedIndex: _selectedIndex,
               itemIndex: 3,
-              icon: Icons.person_outline_rounded,
+              icon: Icons.notifications_active_outlined,
               onTap: () => _onItemTapped(3),
+            ),
+            CustomIconButton(
+              selectedIndex: _selectedIndex,
+              itemIndex: 4,
+              icon: Icons.person_outline_rounded,
+              onTap: () => _onItemTapped(4),
             ),
           ],
         ),

@@ -1,6 +1,7 @@
+import '../resources/pages/products/product_page.dart';
 import '../resources/pages/auth/signup_page.dart';
 import '../resources/pages/auth/login_page.dart';
-import '/resources/pages/profile_page.dart';
+import '../resources/pages/me_page.dart';
 import '../resources/pages/trending_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
@@ -25,7 +26,10 @@ appRouter() => nyRoutes((router) {
       router.route(TrendingPage.path, (context) => TrendingPage(),
           authPage: true);
 
+      // Product routes
+      router.route(ProductPage.path, (context) => ProductPage());
+
       // Profile & Settings routes
-      router.route(ProfilePage.path, (context) => ProfilePage(),
+      router.route(MePage.path, (context) => MePage(),
           transition: PageTransitionType.fade);
     });
