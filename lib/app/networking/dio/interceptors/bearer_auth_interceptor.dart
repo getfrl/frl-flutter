@@ -1,4 +1,4 @@
-import 'package:frl_flutter/config/storage_keys.dart';
+import '/config/storage_keys.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class BearerAuthInterceptor extends Interceptor {
@@ -17,7 +17,7 @@ class BearerAuthInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioException err, ErrorInterceptorHandler handler) {
-    handler.next(err);
+  void onError(DioException dioException, ErrorInterceptorHandler handler) {
+    handler.next(dioException);
   }
 }

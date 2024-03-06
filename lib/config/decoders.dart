@@ -4,16 +4,13 @@ import 'package:frl_flutter/app/models/user.dart';
 import 'package:frl_flutter/app/networking/dio/base_api_service.dart';
 import '/app/networking/api_service.dart';
 
-/*
+/* Model Decoders
 |--------------------------------------------------------------------------
-| Model Decoders
-| -------------------------------------------------------------------------
 | Model decoders are used in 'app/networking/' for morphing json payloads
 | into Models.
 |
-| Learn more https://nylo.dev/docs/5.x/decoders#model-decoders
-|--------------------------------------------------------------------------
-*/
+| Learn more https://nylo.dev/docs/5.20.0/decoders#model-decoders
+|-------------------------------------------------------------------------- */
 
 final Map<Type, dynamic> modelDecoders = {
   List<User>: (data) =>
@@ -24,22 +21,31 @@ final Map<Type, dynamic> modelDecoders = {
   // User: (data) => User.fromJson(data),
 };
 
-/*
-|--------------------------------------------------------------------------
-| API Decoders
+/* API Decoders
 | -------------------------------------------------------------------------
 | API decoders are used when you need to access an API service using the
 | 'api' helper. E.g. api<MyApiService>((request) => request.fetchData());
 |
-| Learn more https://nylo.dev/docs/5.x/decoders#api-decoders
-|--------------------------------------------------------------------------
-*/
+| Learn more https://nylo.dev/docs/5.20.0/decoders#api-decoders
+|-------------------------------------------------------------------------- */
 
-final Map<Type, BaseApiService> apiDecoders = {
-  ApiService: ApiService(),
+final Map<Type, dynamic> apiDecoders = {
+  ApiService: () => ApiService(),
 
   // ...
 
   AuthApiService: AuthApiService(),
   MeApiService: MeApiService(),
+};
+
+/* Controller Decoders
+| -------------------------------------------------------------------------
+| Controller are used in pages.
+|
+| Learn more https://nylo.dev/docs/5.20.0/controllers
+|-------------------------------------------------------------------------- */
+final Map<Type, dynamic> controllers = {
+  HomeController: () => HomeController(),
+
+  // ...
 };

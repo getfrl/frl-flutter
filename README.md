@@ -16,18 +16,17 @@ This project is open source and MIT-licenced, we welcome any contributions. You 
 
 ## Features
 Some core features available
-* [Routing](https://nylo.dev/docs/5.x/router).
-* [Themes and styling](https://nylo.dev/docs/5.x/themes-and-styling).
-* [Localization](https://nylo.dev/docs/5.x/localization).
-* [CLI for generating project files](https://nylo.dev/docs/5.x/metro).
-* [Elegant API Services for Networking](https://nylo.dev/docs/5.x/networking).
-* [Creating App Icons](https://nylo.dev/docs/5.x/app-icons).
-* [Project Configuration](https://nylo.dev/docs/5.x/configuration).
-* [Streamlined Project Structure](https://nylo.dev/docs/5.x/directory-structure).
+* [Routing](https://nylo.dev/docs/5.20.0/router).
+* [Themes and styling](https://nylo.dev/docs/5.20.0/themes-and-styling).
+* [Localization](https://nylo.dev/docs/5.20.0/localization).
+* [CLI for generating project files](https://nylo.dev/docs/5.20.0/metro).
+* [Elegant API Services for Networking](https://nylo.dev/docs/5.20.0/networking).
+* [Creating App Icons](https://nylo.dev/docs/5.20.0/app-icons).
+* [Project Configuration](https://nylo.dev/docs/5.20.0/configuration).
+* [Streamlined Project Structure](https://nylo.dev/docs/5.20.0/directory-structure).
 
 ## Requirements
-* Dart >= 3.0.0
-* Flutter >= 3.10.0
+* Dart >= 3.1.3
 
 ## Getting Started
 
@@ -54,6 +53,7 @@ If you discover any security related issues, please email support@nylo.dev inste
 * [Rashid-Khabeer](https://github.com/Rashid-Khabeer)
 * [youssefKadaouiAbbassi](https://github.com/youssefKadaouiAbbassi)
 * [jeremyhalin](https://github.com/jeremyhalin)
+* [abdulawalarif](https://github.com/abdulawalarif)
 
 ## Licence
 

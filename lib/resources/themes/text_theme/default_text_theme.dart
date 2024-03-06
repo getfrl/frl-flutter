@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/*
-|--------------------------------------------------------------------------
-| Default text theme
-|--------------------------------------------------------------------------
-*/
+/* Default text theme
+|-------------------------------------------------------------------------- */
 
 final TextTheme defaultTextTheme = TextTheme(
   titleLarge: TextStyle(

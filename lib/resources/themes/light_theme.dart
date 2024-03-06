@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '/config/font.dart';
+import '/config/design.dart';
 import '/resources/themes/styles/color_styles.dart';
 import '/resources/themes/text_theme/default_text_theme.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-/*
+/* Light Theme
 |--------------------------------------------------------------------------
-| Light Theme
-|
 | Theme Config - config/theme.dart
-|--------------------------------------------------------------------------
-*/
+|-------------------------------------------------------------------------- */
 
 ThemeData lightTheme(ColorStyles color) {
   TextTheme lightTheme =
@@ -26,6 +23,7 @@ ThemeData lightTheme(ColorStyles color) {
     hintColor: color.primaryAccent,
     dividerTheme: DividerThemeData(color: Colors.grey[100]),
     appBarTheme: AppBarTheme(
+      surfaceTintColor: Colors.transparent,
       backgroundColor: color.appBarBackground,
       titleTextStyle:
           lightTheme.titleLarge!.copyWith(color: color.appBarPrimaryContent),

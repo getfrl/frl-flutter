@@ -5,16 +5,13 @@ import '../resources/pages/me_page.dart';
 import '../resources/pages/trending_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-/*
+/* App Router
 |--------------------------------------------------------------------------
-| App Router
-|
 | * [Tip] Create pages faster 🚀
 | Run the below in the terminal to create new a page.
 | "dart run nylo_framework:main make:page profile_page"
-| Learn more https://nylo.dev/docs/5.x/router
-|--------------------------------------------------------------------------
-*/
+| Learn more https://nylo.dev/docs/5.20.0/router
+|-------------------------------------------------------------------------- */
 
 appRouter() => nyRoutes((router) {
       // Auth routes
