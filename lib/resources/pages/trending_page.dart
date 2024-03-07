@@ -12,7 +12,7 @@ class TrendingPage extends NyStatefulWidget {
 
   static const path = '/home-page';
 
-  TrendingPage({Key? key}) : super(key: key);
+  TrendingPage({Key? key}) : super(path, child: _TrendingPageState());
 
   @override
   _TrendingPageState createState() => _TrendingPageState();
@@ -31,7 +31,7 @@ class _TrendingPageState extends NyState<TrendingPage> {
       child: Scaffold(
         extendBody: true,
         appBar: AppBar(
-          toolbarHeight: 80,
+          toolbarHeight: 50,
           title: Text("trending.title".tr()),
           centerTitle: true,
           elevation: 0,
@@ -55,7 +55,7 @@ class _TrendingPageState extends NyState<TrendingPage> {
                     // This is where you add your tab bar view
                     children: [
                       SingleChildScrollView(
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(16),
                         child: Column(
                           children: [
                             Row(
@@ -65,11 +65,10 @@ class _TrendingPageState extends NyState<TrendingPage> {
                                   "Today",
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w800,
                                     fontSize: 18,
                                   ),
                                 ),
-                                Icon(Icons.tune, color: Colors.black)
                               ],
                             ),
                             SizedBox(height: 20),
@@ -78,11 +77,12 @@ class _TrendingPageState extends NyState<TrendingPage> {
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: 12,
                               separatorBuilder: (context, index) =>
-                                  SizedBox(height: 12),
+                                  SizedBox(height: 8),
                               itemBuilder: (context, index) {
                                 return ProductCard(
                                   imageUrl:
                                       'public/assets/images/product-photo.png',
+                                  brand: "Nivea",
                                   title:
                                       "Nivea Sun Carotene Bronze Sunscreen Lotion SPF 6",
                                   price: "€12.99",

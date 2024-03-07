@@ -17,7 +17,7 @@ class LoginPage extends NyStatefulWidget {
 
   static const path = '/login';
 
-  LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(path, child: _LoginPageState());
 
   @override
   _LoginPageState createState() => _LoginPageState();

@@ -61,7 +61,7 @@ class _CustomBottomNavState extends NyState<CustomBottomNav> {
       case 2:
         // Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage()));
         break;
-      case 2:
+      case 3:
         // Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage()));
         break;
       case 4:

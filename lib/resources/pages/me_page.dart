@@ -8,7 +8,7 @@ import 'package:nylo_framework/nylo_framework.dart';
 class MePage extends NyStatefulWidget {
   static const path = '/profile';
 
-  MePage({Key? key}) : super(key: key);
+  MePage({Key? key}) : super(path, child: _MePageState());
 
   @override
   _MePageState createState() => _MePageState();
@@ -73,7 +73,7 @@ class _MePageState extends NyState<MePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "@erinhuang",
+                          "@" + (me?.username ?? "No name found"),
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,

@@ -1,10 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import '/app/networking/dio/base_api_service.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import '/app/models/user.dart';
 
-class AuthApiService extends BaseApiService {
+class AuthApiService extends NyApiService {
   AuthApiService({BuildContext? buildContext}) : super(buildContext);
 
   @override

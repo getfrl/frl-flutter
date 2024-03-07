@@ -21,7 +21,7 @@ class SignupPage extends NyStatefulWidget {
 
   static const path = '/signup';
 
-  SignupPage({Key? key}) : super(key: key);
+  SignupPage({Key? key}) : super(path, child: _SignupPageState());
 
   @override
   _SignupPageState createState() => _SignupPageState();

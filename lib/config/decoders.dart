@@ -1,7 +1,8 @@
+import '/app/models/vote.dart';
+import '/app/models/product.dart';
 import '/app/networking/me_api_service.dart';
 import '/app/networking/auth_api_service.dart';
-import 'package:frl_flutter/app/models/user.dart';
-import 'package:frl_flutter/app/networking/dio/base_api_service.dart';
+import '/app/models/user.dart';
 import '/app/networking/api_service.dart';
 
 /* Model Decoders
@@ -15,10 +16,13 @@ import '/app/networking/api_service.dart';
 final Map<Type, dynamic> modelDecoders = {
   List<User>: (data) =>
       List.from(data).map((json) => User.fromJson(json)).toList(),
-  //
   User: (data) => User.fromJson(data),
-
-  // User: (data) => User.fromJson(data),
+  List<Product>: (data) =>
+      List.from(data).map((json) => Product.fromJson(json)).toList(),
+  Product: (data) => Product.fromJson(data),
+  List<Vote>: (data) =>
+      List.from(data).map((json) => Vote.fromJson(json)).toList(),
+  Vote: (data) => Vote.fromJson(data),
 };
 
 /* API Decoders
@@ -34,8 +38,8 @@ final Map<Type, dynamic> apiDecoders = {
 
   // ...
 
-  AuthApiService: AuthApiService(),
-  MeApiService: MeApiService(),
+  AuthApiService: () => AuthApiService(),
+  MeApiService: () => MeApiService(),
 };
 
 /* Controller Decoders
@@ -45,7 +49,7 @@ final Map<Type, dynamic> apiDecoders = {
 | Learn more https://nylo.dev/docs/5.20.0/controllers
 |-------------------------------------------------------------------------- */
 final Map<Type, dynamic> controllers = {
-  HomeController: () => HomeController(),
+  // HomeController: () => HomeController(),
 
   // ...
 };

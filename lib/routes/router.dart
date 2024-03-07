@@ -1,4 +1,4 @@
-import '../resources/pages/products/product_page.dart';
+import '../resources/pages/product_page.dart';
 import '../resources/pages/auth/signup_page.dart';
 import '../resources/pages/auth/login_page.dart';
 import '../resources/pages/me_page.dart';
@@ -24,7 +24,8 @@ appRouter() => nyRoutes((router) {
           authPage: true);
 
       // Product routes
-      router.route(ProductPage.path, (context) => ProductPage());
+      router.route(ProductPage.path, (context) => ProductPage(),
+          authPage: true);
 
       // Profile & Settings routes
       router.route(MePage.path, (context) => MePage(),

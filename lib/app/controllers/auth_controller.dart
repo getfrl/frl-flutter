@@ -1,8 +1,8 @@
-import 'package:frl_flutter/resources/pages/auth/login_page.dart';
-import 'package:frl_flutter/resources/pages/trending_page.dart';
+import 'package:flutter/widgets.dart';
+import '../../resources/pages/trending_page.dart';
+import '../../resources/pages/auth/login_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'controller.dart';
-import 'package:flutter/widgets.dart';
 import '../models/user.dart';
 import '../networking/auth_api_service.dart';
 
