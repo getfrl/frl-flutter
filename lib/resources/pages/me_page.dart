@@ -6,7 +6,7 @@ import 'package:frl_flutter/resources/widgets/custom_bottom_nav_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class MePage extends NyStatefulWidget {
-  static const path = '/profile';
+  static const path = '/me';
 
   MePage({Key? key}) : super(path, child: _MePageState());
 

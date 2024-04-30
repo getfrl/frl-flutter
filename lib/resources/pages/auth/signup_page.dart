@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frl_flutter/resources/widgets/inputs/custom_text_field.dart';
+import 'package:frl_flutter/resources/widgets/inputs/custom_text_field_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 // Pages
@@ -89,6 +89,7 @@ class _SignupPageState extends NyState<SignupPage> {
                     ),
                     SizedBox(height: 100),
                     CustomTextField(
+                      label: 'Email',
                       controller: _emailController,
                       placeholder: "Your email address",
                     ),

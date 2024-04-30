@@ -8,6 +8,7 @@ class DarkThemeColors implements ColorStyles {
   // general
   Color get background => const Color(0xFF181818);
   Color get secondaryBackground => const Color(0xFFF2F2F2);
+  Color get inputBackground => const Color(0xFF2A2A2A);
 
   Color get primaryContent => const Color(0xFFFFFFFF);
   Color get secondaryContent => Colors.black;
@@ -21,14 +22,21 @@ class DarkThemeColors implements ColorStyles {
   Color get appBarPrimaryContent => Colors.white;
 
   // buttons
-  Color get buttonBackground => Colors.white60;
-  Color get buttonPrimaryContent => const Color(0xFF232c33);
+  Color get buttonPrimaryBackground => const Color(0xFFF2FF5E);
+  Color get buttonPrimaryContent => Colors.black;
+  Color get buttonSecondaryBackground => Colors.black;
+  Color get buttonSecondaryContent => const Color(0xFFF2FF5E);
+  Color get buttonBackground =>
+      const Color(0xFFF2FF5E); // Not sure where this is used
+
+  // Form Inputs
+  Color get inputBorder => const Color(0xFF5B5B5B);
 
   // bottom tab bar
-  Color get bottomTabBarBackground => const Color(0xFF232c33);
+  Color get bottomTabBarBackground => Colors.black;
 
   // bottom tab bar - icons
-  Color get bottomTabBarIconSelected => Colors.white70;
+  Color get bottomTabBarIconSelected => const Color(0xFFF2FF5E);
   Color get bottomTabBarIconUnselected => Colors.white60;
 
   // bottom tab bar - label

@@ -1,10 +1,10 @@
 import 'package:nylo_framework/nylo_framework.dart';
 
 import '/resources/themes/dark_theme.dart';
-import '/resources/themes/light_theme.dart';
+// import '/resources/themes/light_theme.dart';
 import '/resources/themes/styles/color_styles.dart';
 import '/resources/themes/styles/dark_theme_colors.dart';
-import '/resources/themes/styles/light_theme_colors.dart';
+// import '/resources/themes/styles/light_theme_colors.dart';
 
 /* Flutter Themes
 |--------------------------------------------------------------------------
@@ -19,8 +19,8 @@ final List<BaseThemeConfig<ColorStyles>> appThemes = [
   BaseThemeConfig<ColorStyles>(
     id: getEnv('LIGHT_THEME_ID'),
     description: "Light theme",
-    theme: lightTheme,
-    colors: LightThemeColors(),
+    theme: darkTheme,
+    colors: DarkThemeColors(),
   ),
   BaseThemeConfig<ColorStyles>(
     id: getEnv('DARK_THEME_ID'),

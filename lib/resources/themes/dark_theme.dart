@@ -13,6 +13,7 @@ import 'package:nylo_framework/nylo_framework.dart';
 ThemeData darkTheme(ColorStyles color) {
   TextTheme darkTheme =
       getAppTextTheme(appFont, defaultTextTheme.merge(_textTheme(color)));
+
   return ThemeData(
     useMaterial3: true,
     primaryColor: color.primaryContent,
@@ -29,7 +30,24 @@ ThemeData darkTheme(ColorStyles color) {
         systemOverlayStyle: SystemUiOverlayStyle.light),
     buttonTheme: ButtonThemeData(
       buttonColor: color.primaryAccent,
-      colorScheme: ColorScheme.light(primary: color.buttonBackground),
+      colorScheme: ColorScheme.light(primary: color.buttonPrimaryBackground),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: color.inputBackground,
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: color.primaryAccent),
+        borderRadius: BorderRadius.circular(50),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: color.primaryContent),
+        borderRadius: BorderRadius.circular(50),
+      ),
+    ),
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: color.inputBorder,
+      selectionColor: color.primaryAccent.withOpacity(0.5),
+      selectionHandleColor: color.primaryAccent,
     ),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(foregroundColor: color.primaryContent),
@@ -37,7 +55,7 @@ ThemeData darkTheme(ColorStyles color) {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: TextButton.styleFrom(
           foregroundColor: color.buttonPrimaryContent,
-          backgroundColor: color.buttonBackground),
+          backgroundColor: color.buttonPrimaryBackground),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: color.bottomTabBarBackground,

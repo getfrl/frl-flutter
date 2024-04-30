@@ -1,3 +1,8 @@
+import '/resources/pages/onboarding/buy_page.dart';
+import '/resources/pages/onboarding/recommendations_page.dart';
+import '../resources/pages/onboarding/trend_page.dart';
+import '/resources/pages/onboarding/allow_notifications_page.dart';
+import '/resources/pages/onboarding/profile_page.dart';
 import '../resources/pages/product_page.dart';
 import '../resources/pages/auth/signup_page.dart';
 import '../resources/pages/auth/login_page.dart';
@@ -20,14 +25,22 @@ appRouter() => nyRoutes((router) {
       router.route(LoginPage.path, (context) => LoginPage());
 
       // Main routes
-      router.route(TrendingPage.path, (context) => TrendingPage(),
-          authPage: true);
+      router.route(TrendingPage.path, (context) => TrendingPage());
 
       // Product routes
-      router.route(ProductPage.path, (context) => ProductPage(),
-          authPage: true);
+      router.route(ProductPage.path, (context) => ProductPage());
 
       // Profile & Settings routes
       router.route(MePage.path, (context) => MePage(),
           transition: PageTransitionType.fade);
+
+      // Onbording routes
+      router.route(ProfilePage.path, (context) => ProfilePage(),
+          authPage: true);
+      router.route(
+          AllowNotificationsPage.path, (context) => AllowNotificationsPage());
+      router.route(TrendPage.path, (context) => TrendPage());
+      router.route(
+          RecommendationsPage.path, (context) => RecommendationsPage());
+      router.route(BuyPage.path, (context) => BuyPage());
     });

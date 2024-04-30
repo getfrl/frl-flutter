@@ -4,7 +4,7 @@ import 'package:frl_flutter/resources/pages/auth/signup_page.dart';
 import 'package:frl_flutter/resources/themes/text_theme/default_text_theme.dart';
 import 'package:frl_flutter/resources/widgets/buttons/action_button.dart';
 import 'package:frl_flutter/resources/widgets/buttons/social_login_button.dart';
-import 'package:frl_flutter/resources/widgets/inputs/custom_text_field.dart';
+import 'package:frl_flutter/resources/widgets/inputs/custom_text_field_widget.dart';
 import 'package:frl_flutter/resources/widgets/inputs/password_field.dart';
 import 'package:frl_flutter/resources/widgets/utils/divider_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
@@ -84,6 +84,7 @@ class _LoginPageState extends NyState<LoginPage> {
                     ),
                     SizedBox(height: 100),
                     CustomTextField(
+                      label: "Email",
                       controller: _emailController,
                       placeholder: "Your email address",
                     ),

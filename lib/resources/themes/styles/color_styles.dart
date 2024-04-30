@@ -10,6 +10,8 @@ abstract class ColorStyles extends BaseColorStyles {
   // general
   Color get background;
   Color get secondaryBackground;
+  Color get inputBackground;
+
   Color get primaryContent;
   Color get primaryAccent;
 
@@ -21,8 +23,10 @@ abstract class ColorStyles extends BaseColorStyles {
   Color get appBarPrimaryContent;
 
   // buttons
-  Color get buttonBackground;
+  Color get buttonPrimaryBackground;
   Color get buttonPrimaryContent;
+  Color get buttonSecondaryBackground;
+  Color get buttonSecondaryContent;
 
   // bottom tab bar
   Color get bottomTabBarBackground;
@@ -34,6 +38,9 @@ abstract class ColorStyles extends BaseColorStyles {
   // bottom tab bar - label
   Color get bottomTabBarLabelUnselected;
   Color get bottomTabBarLabelSelected;
+
+  // Forms Inputs
+  Color get inputBorder;
 
   // e.g. add a new style
   // Uncomment the below:
