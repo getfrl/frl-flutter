@@ -1,10 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:nylo_framework/nylo_framework.dart';
+import '/config/decoders.dart';
 import '/app/models/user.dart';
 
 class AuthApiService extends NyApiService {
-  AuthApiService({BuildContext? buildContext}) : super(buildContext);
+  AuthApiService({BuildContext? buildContext})
+      : super(buildContext, decoders: modelDecoders);
 
   @override
   // String get baseUrl => 'https://safely-discrete-racer.ngrok-free.app';
@@ -22,6 +24,8 @@ class AuthApiService extends NyApiService {
   }
 
   Future<User?> logIn(String email, String password) async {
+    debugPrint("Available decoders: $decoders");
+    debugPrint("Model Decoders Keys: ${decoders.containsKey(User)}");
     return await network<User>(
       request: (request) => request
           .post("/api/v1/auth", data: {"email": email, "password": password}),

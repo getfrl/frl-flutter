@@ -147,7 +147,7 @@ class _MePageState extends NyState<MePage> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Color(0xFF242424),
-                  borderRadius: BorderRadius.circular(24),
+                  borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: Color(0xFF5B5B5B),
                     width: 1,

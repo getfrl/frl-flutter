@@ -8,7 +8,7 @@ class ProductCard extends StatefulWidget {
   final String brand;
   final String title;
   final String price;
-  final String oldPrice;
+  final String? oldPrice;
   final String votes;
   final String uploadCount;
 
@@ -17,7 +17,7 @@ class ProductCard extends StatefulWidget {
     required this.brand,
     required this.title,
     required this.price,
-    required this.oldPrice,
+    this.oldPrice,
     required this.votes,
     required this.uploadCount,
   });
@@ -60,7 +60,7 @@ class _ProductCardState extends NyState<ProductCard> {
           borderRadius: BorderRadius.circular(14),
         ),
         width: double.infinity,
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(12),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -79,17 +79,17 @@ class _ProductCardState extends NyState<ProductCard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    widget.brand,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontWeight: FontWeight.w700,
-                      fontSize: 12,
-                      height: 1.15,
-                    ),
-                  ),
+                  // Text(
+                  //   widget.brand,
+                  //   maxLines: 1,
+                  //   overflow: TextOverflow.ellipsis,
+                  //   style: TextStyle(
+                  //     color: Colors.grey[600],
+                  //     fontWeight: FontWeight.w700,
+                  //     fontSize: 12,
+                  //     height: 1.15,
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 3,
                   ),
@@ -110,29 +110,38 @@ class _ProductCardState extends NyState<ProductCard> {
                   Row(
                     children: [
                       Text(
+                        "From ",
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12,
+                          height: 1.15,
+                        ),
+                      ),
+                      Text(
                         widget.price,
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w600,
-                          fontSize: 14,
+                          fontSize: 12,
                           height: 1.15,
                         ),
                       ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        widget.oldPrice,
-                        style: TextStyle(
-                          decoration: TextDecoration.lineThrough,
-                          decorationColor: Color(0xFFF2A793),
-                          decorationThickness: 1.25,
-                          color: Color(0xFFF2A793),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
-                          height: 1.15,
-                        ),
-                      ),
+                      if (widget.oldPrice != null)
+                        Text(
+                          widget.oldPrice!,
+                          style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor: Color(0xFFF2A793),
+                            decorationThickness: 1.25,
+                            color: Color(0xFFF2A793),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14,
+                            height: 1.15,
+                          ),
+                        )
+                      else
+                        SizedBox.shrink(),
                     ],
                   ),
                   SizedBox(

@@ -21,7 +21,6 @@ class MeApiService extends NyApiService {
   String get baseUrl => getEnv('API_BASE_URL');
 
   Future<User> fetchMe(User user) async {
-    debugPrint("Model Decoders Keys: ${decoders.containsKey(User)}");
     User? result = await network<User>(
       request: (request) => request.get(
         "/api/v1/me",

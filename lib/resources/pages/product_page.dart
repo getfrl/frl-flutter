@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frl_flutter/bootstrap/helpers.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class ProductPage extends NyStatefulWidget {
@@ -8,6 +9,8 @@ class ProductPage extends NyStatefulWidget {
 }
 
 class _ProductPageState extends NyState<ProductPage> {
+  int voteCount = 4;
+
   @override
   init() async {}
 
@@ -60,28 +63,31 @@ class _ProductPageState extends NyState<ProductPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(height: 16),
+                            // Brand
                             Text(
                               "Nike",
                               style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.grey[500],
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 14,
+                                  color: Colors.grey[700],
+                                  fontWeight: FontWeight.w900),
                             ),
                             SizedBox(height: 2),
+                            // Product Title
                             Text(
-                              "TERREX AGRAVIC FLOW GORE-TEX TRAIL - Trail hardloopschoenen - semi flash aqua/wonder silver/lucid lemon",
+                              "2 Pcs Ultrasonic Dog Whistle",
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
                             ),
                             SizedBox(height: 2),
+                            // Price
                             Text(
                               "From \€120",
                               style: TextStyle(
                                   fontSize: 14,
-                                  color: Colors.grey[700],
-                                  fontWeight: FontWeight.bold),
+                                  color: Colors.grey[900],
+                                  fontWeight: FontWeight.normal),
                             ),
                             SizedBox(height: 24),
                             Text(
@@ -93,11 +99,97 @@ class _ProductPageState extends NyState<ProductPage> {
                               ),
                             ),
                             SizedBox(height: 2),
+                            // Product Description
                             Text(
-                              "A divine fragrance offering from Le Labo, Baie 19 Eau de Parfum is a sublimely sophisticated olfactory ode to heavy rain after a prolonged dry spell. United with juniper berry, patchouli and green leaves, this fresh and herbaceous scent is utterly spellbinding. Intriguing and addictive, the fragrance is perfect for both men and women and, if youre into layering your scents. Available in three sizes, you can ensure youre never without your signature scent keep one in your bag, one on your desk and one in pride of place on your dressing table.",
+                              "The 30-foot Free Range is a long dog leash that is commonly used for recall training, hiking, and outdoor play. This length is great for the beach or playing with your dog in the park for close play.",
                               style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.grey[700],
+                                fontSize: 14,
+                                color: Colors.grey[800],
+                              ),
+                            ),
+                            SizedBox(height: 24),
+                            TextButton(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    "Vote now  •",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    voteCount.toString(),
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  voteCount++;
+                                });
+                              },
+                              style: ButtonStyle(
+                                padding: MaterialStateProperty.all(
+                                  EdgeInsets.symmetric(vertical: 12),
+                                ),
+                                backgroundColor: MaterialStateProperty.all(
+                                    ThemeColor.get(context).primaryAccent),
+                                shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50),
+                                    side: BorderSide(
+                                        color: ThemeColor.get(context)
+                                            .primaryAccent),
+                                  ),
+                                ),
+                                overlayColor:
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return const Color.fromARGB(255, 184, 176,
+                                          153)!; // Overlay color when pressed
+                                    }
+                                    return Colors
+                                        .transparent; // No overlay color
+                                  },
+                                ),
+                                minimumSize: MaterialStateProperty.all(
+                                  Size(double.infinity,
+                                      48), // full width and 48 height
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 24),
+                            Divider(
+                              color: Colors.grey[300],
+                              thickness: 1,
+                              height: 20,
+                            ),
+                            SizedBox(height: 24),
+                            Text(
+                              "All the linked stores in FRL have been given the official stamp of approval by our team. No shady business here, so go ahead and shop with peace of mind!",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.grey[500],
+                              ),
+                            ),
+                            SizedBox(height: 12),
+                            Text(
+                              "Product added by:",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
                             ),
                             SizedBox(height: 86),

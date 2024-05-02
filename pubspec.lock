@@ -609,10 +609,10 @@ packages:
     dependency: transitive
     description:
       name: nylo_support
-      sha256: c00391b3d73e1f0f92c5feea6d131efce6a20a43453d6e1231e85cf9b224ecbe
+      sha256: "2927b62a1dfbed8e85847e9460d0b8bcca3ec61b4d72318f3835dbbad6980fb0"
       url: "https://pub.dev"
     source: hosted
-    version: "5.52.0"
+    version: "5.56.1"
   package_config:
     dependency: transitive
     description:

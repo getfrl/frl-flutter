@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:frl_flutter/bootstrap/helpers.dart';
 import 'package:frl_flutter/resources/pages/me_page.dart';
+import 'package:frl_flutter/resources/pages/notifications_page.dart';
 import 'package:frl_flutter/resources/pages/trending_page.dart';
+import 'package:frl_flutter/resources/pages/explore_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class CustomBottomNav extends StatefulWidget {
@@ -56,13 +58,22 @@ class _CustomBottomNavState extends NyState<CustomBottomNav> {
         break;
       case 1:
         HapticFeedback.lightImpact();
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
+        routeTo(
+          ExplorePage.path,
+          navigationType: NavigationType.pushReplace,
+          pageTransition: PageTransitionType.fade,
+        );
         break;
       case 2:
         // Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage()));
         break;
       case 3:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage()));
+        HapticFeedback.lightImpact();
+        routeTo(
+          NotificationsPage.path,
+          navigationType: NavigationType.pushReplace,
+          pageTransition: PageTransitionType.fade,
+        );
         break;
       case 4:
         HapticFeedback.lightImpact();

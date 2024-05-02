@@ -1,3 +1,5 @@
+import '/resources/pages/explore_page.dart';
+import '/resources/pages/notifications_page.dart';
 import '/resources/pages/onboarding/buy_page.dart';
 import '/resources/pages/onboarding/recommendations_page.dart';
 import '../resources/pages/onboarding/trend_page.dart';
@@ -20,12 +22,13 @@ import 'package:nylo_framework/nylo_framework.dart';
 
 appRouter() => nyRoutes((router) {
       // Auth routes
-      router.route(SignupPage.path, (context) => SignupPage(),
+      router.route(SignupPage.path, (context) => SignupPage());
+      router.route(LoginPage.path, (context) => LoginPage(),
           initialRoute: true);
-      router.route(LoginPage.path, (context) => LoginPage());
 
       // Main routes
-      router.route(TrendingPage.path, (context) => TrendingPage());
+      router.route(TrendingPage.path, (context) => TrendingPage(),
+          authPage: true);
 
       // Product routes
       router.route(ProductPage.path, (context) => ProductPage());
@@ -35,12 +38,13 @@ appRouter() => nyRoutes((router) {
           transition: PageTransitionType.fade);
 
       // Onbording routes
-      router.route(ProfilePage.path, (context) => ProfilePage(),
-          authPage: true);
+      router.route(ProfilePage.path, (context) => ProfilePage());
       router.route(
           AllowNotificationsPage.path, (context) => AllowNotificationsPage());
       router.route(TrendPage.path, (context) => TrendPage());
       router.route(
           RecommendationsPage.path, (context) => RecommendationsPage());
       router.route(BuyPage.path, (context) => BuyPage());
+      router.route(NotificationsPage.path, (context) => NotificationsPage());
+      router.route(ExplorePage.path, (context) => ExplorePage());
     });

@@ -11,9 +11,7 @@ class AppProvider implements NyProvider {
     await NyLocalization.instance.init(
       localeType: localeType,
       languageCode: languageCode,
-      languagesList: languagesList,
       assetsDirectory: assetsDirectory,
-      valuesAsMap: valuesAsMap,
     );
 
     nylo.addLoader(loader);
@@ -24,6 +22,10 @@ class AppProvider implements NyProvider {
     nylo.addModelDecoders(modelDecoders);
     nylo.addControllers(controllers);
     nylo.addApiDecoders(apiDecoders);
+
+    // Optional
+    // nylo.showDateTimeInLogs(); // Show date time in logs
+    // nylo.monitorAppUsage(); // Monitor the app usage
 
     return nylo;
   }

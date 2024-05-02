@@ -86,7 +86,6 @@ class _TrendingPageState extends NyState<TrendingPage> {
                                   title:
                                       "Nivea Sun Carotene Bronze Sunscreen Lotion SPF 6",
                                   price: "€12.99",
-                                  oldPrice: "€16.99",
                                   votes: "1,429 Votes in the last 2 hour",
                                   uploadCount: "18.7k",
                                 );
@@ -115,7 +114,7 @@ class _TrendingPageState extends NyState<TrendingPage> {
                             ),
                             SizedBox(height: 20),
                             GridView.count(
-                              childAspectRatio: 0.90,
+                              childAspectRatio: 0.845,
                               crossAxisCount: 2,
                               crossAxisSpacing: 10,
                               mainAxisSpacing: 10,

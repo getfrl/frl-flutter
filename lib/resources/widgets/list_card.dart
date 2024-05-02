@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:frl_flutter/app/models/user.dart';
 import 'package:frl_flutter/bootstrap/helpers.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
@@ -103,7 +102,7 @@ class _ListCardState extends NyState<ListCard> {
         Container(
           padding: EdgeInsets.all(12),
           width: double.infinity,
-          height: 120,
+          height: 112,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -115,19 +114,21 @@ class _ListCardState extends NyState<ListCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Weekend Trip Essentials",
+                "My favourite cooking books",
                 style: TextStyle(
                     color: Colors.black,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16,
-                    height: 1.35),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    height: 1.30),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
-              SizedBox(height: 6),
+              SizedBox(height: 4),
               Text(
                 "50 Products in this list",
                 style: TextStyle(
                   color: Color(0xFF6190E9),
-                  fontSize: 13,
+                  fontSize: 11,
                 ),
               ),
               SizedBox(
